@@ -43,16 +43,16 @@ import java.util.Random;
 public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoCloseable
 {
 	private JTextField textInput;
-    private EmoteChanger display;
-    private JMenuItem connect;
-    private boolean chatbot_on = false;
+    	private EmoteChanger display;
+    	private JMenuItem connect;
+    	private boolean chatbot_on = false;
 	private String host;
 	private String name;
 	private static Socket socket;
 	private int id;
 
-    private Thread t;
-    private PrintWriter output;
+    	private Thread t;
+    	private PrintWriter output;
 
 	// private boolean sendable = false;
 
