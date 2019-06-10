@@ -398,8 +398,6 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
                     String output1 = cb.CommunicateWithBot(getTextInput());
                     println(output1);
                     chatbot_on = true;
-                    println("Silly " + getName() + 
-                        ", you can't send messages to nobody! Why not make a few friends and connect with them?");
                 }
             }
             // textInput.setText("");
