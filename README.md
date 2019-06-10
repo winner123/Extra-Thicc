@@ -4,6 +4,8 @@
 
 ### Usage
 
+Download the latest version of python, and download tensorflow.
+
 Download https://drive.google.com/uc?id=1rRRY-y1KdVk4UB5qhu7BjQHtfadIOmMk&export=download file and place it in models/reddit folder this will take some time 
 
 Then 
