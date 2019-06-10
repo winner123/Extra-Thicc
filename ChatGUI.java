@@ -407,6 +407,12 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
         } else if ("CONNECT".equals(command)) {
         	// println("Connecting...");
         	setHost(JOptionPane.showInputDialog(this, "Where do you want to connect?"));
+            try {
+                connect(getHost(), getName());
+                connect.setVisible(false);
+            } catch (IOException ioe) {
+                println("Failed to connect to " + getHost());
+            }
             
             // println("host is " + getHost());
             
@@ -425,7 +431,7 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
         		setColor(Color.blue);
         	else if("BLACK".equals(command))
         		setColor(Color.black);
-		else if("YELLOW".equals(command))
+    		else if("YELLOW".equals(command))
         		setColor(Color.yellow);
         	
         	println("Text color set to: " + command);
