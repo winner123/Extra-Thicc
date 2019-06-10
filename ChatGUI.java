@@ -372,10 +372,7 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
         
     }
 
-    public void connectEliza(String username)
-    {
-        println("Connecting to Eliza...");
-    }
+    
     @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -396,6 +393,7 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
                     }
                     ChatBot cb = new ChatBot();
                     String output1 = cb.CommunicateWithBot(getTextInput());
+                    output1 = output1.substring(4,output1.length()-3);
                     println("ChatBot: " + output1);
                     chatbot_on = true;
                 }
@@ -411,16 +409,7 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
         	setHost(JOptionPane.showInputDialog(this, "Where do you want to connect?"));
             
             // println("host is " + getHost());
-            if("ELIZA".equals(getHost().toUpperCase())) {
-                connectEliza(getName());
-            } else {
-                try {
-                    connect(getHost(), getName());
-                    connect.setVisible(false);
-                } catch (IOException ioe) {
-                    println("Failed to connect to " + getHost());
-                }
-            }
+            
         } else if ("QUIT".equals(command)) {
         	quit();
         } else  { // colors
