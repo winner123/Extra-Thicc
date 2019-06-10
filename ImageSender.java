@@ -34,7 +34,7 @@ public class ImageSender
         {
             for(int j = 0; j < 400; j++)
             {
-                gay.setRGB(i, j, pixels[i][j])
+                gay.setRGB(i, j, pixels[i][j]);
             }
         }
         return gay;

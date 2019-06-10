@@ -158,11 +158,16 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
         connect.setActionCommand("CONNECT");
         connect.addActionListener(this);
         connections.add(connect);
+
+        JMenuItem changeName = new JMenuItem("Change Name");
+        changeName.setActionCommand("RENAME");
+        changeName.addActionListener(this);
+        connections.add(changeName);
        
-        JMenu chatbot = new JMenu("Chatbot");
+        /*JMenu chatbot = new JMenu("Chatbot");
         chatbot.setActionCommand("CHATBOT");
         connect.addActionListener(this);
-        connections.add(chatbot);
+        connections.add(chatbot);*/
 
         JMenuItem quit = new JMenuItem("Quit");
         quit.setActionCommand("QUIT");
@@ -401,9 +406,20 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
             // textInput.setText("");
         } else if ("DRAW".equals(command)) {
         	openDrawPane();
-        } else if ("CHATBOT".equals(command)) {
+        } /*else if ("CHATBOT".equals(command)) {
             chatbot_on = true;
         	
+        }*/ else if ("RENAME".equals(command)) {
+            try{
+                String nameInput = JOptionPane.showInputDialog(this, "What do your want your username to be?");
+                setName(nameInput);
+                FileWriter nameOutput = new FileWriter("user.name", false);
+                nameOutput.write(nameInput);
+                nameOutput.flush();
+                nameOutput.close();
+            } catch(Exception ex) {
+                System.out.println("You done goofed");
+            }
         } else if ("CONNECT".equals(command)) {
         	// println("Connecting...");
         	setHost(JOptionPane.showInputDialog(this, "Where do you want to connect?"));
