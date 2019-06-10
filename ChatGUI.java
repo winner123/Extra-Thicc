@@ -396,7 +396,8 @@ public class ChatGUI extends JFrame implements Runnable, ActionListener, AutoClo
                     }
                     ChatBot cb = new ChatBot();
                     String output1 = cb.CommunicateWithBot(getTextInput());
-                    println(output1);
+                    output1 = output1.substring(4, output1.length()-3);
+                    println("ChatBot: " + output1);
                     chatbot_on = true;
                 }
             }
